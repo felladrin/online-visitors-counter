@@ -4,7 +4,7 @@ Real-time online visitors counter using Ajax, PHP PDO and SQLite.
 
 It adds a discrete link (auto-refreshed every 15 seconds) with the number of current users on the website.
 
-![](http://i.imgur.com/Q4hgNmZ.png)
+![](http://i.imgur.com/EJfXHgs.png)
 
 If the link is clicked, a list of pages currently been visited appears, along with the number of visitors in each page.
 
@@ -49,8 +49,6 @@ And the result would be:
 
 ### Retribute ###
 
-Like it and want to retribute me? A flattr microdonation would make my day!
+If you appreciate my work and want to retribute me, a flattr would make my day!
 
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=Felladrin&url=https%3A%2F%2Fgithub.com%2Ffelladrin%2Fonline-visitors-counter)
-
-Thank you.
