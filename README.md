@@ -47,8 +47,6 @@ And the result would be:
 
 ![](http://i.imgur.com/QaVxal7.png)
 
-### Retribute ###
+## License ##
 
-If you appreciate my work and want to retribute me, a flattr would make my day!
-
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=Felladrin&url=https%3A%2F%2Fgithub.com%2Ffelladrin%2Fonline-visitors-counter)
+The MIT License (MIT)
