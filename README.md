@@ -29,10 +29,6 @@ But here is another quick example: Let's say your website is `http://example.com
 
 	<script src='http://example.com/ovc/counter.js'></script>
 
-## Live Demo ##
-
-You can see it live at my website: [http://felladrin.com](http://felladrin.com)
-
 ## Customizing ##
 
 On the config.php file, you'll find a lot of customizable parameters. Easy to set, as you can see on the following example.
