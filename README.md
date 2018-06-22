@@ -10,6 +10,13 @@ If the link is clicked, a list of pages currently been visited appears, along wi
 
 ![](http://i.imgur.com/SoYLh8o.png)
 
+## Requirements ##
+
+- PHP5 or PHP7 with PDO SQLite extension
+- SQLite
+- Write permission on the folder 'ovc' so php can create and use the sqlite database
+
+If you're not using a webhosting panel, like cPanel or VestaCP, please, install the above requirements manually on your OS.
 
 ## Usage ##
 
@@ -43,6 +50,7 @@ And the result would be:
 
 ![](http://i.imgur.com/QaVxal7.png)
 
-## License ##
+## License
 
-The MIT License (MIT)
+The MIT License  
+<http://victor.mit-license.org>
