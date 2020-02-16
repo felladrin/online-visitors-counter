@@ -1,0 +1,12 @@
+{
+	"name": "PHP 7",
+	"dockerFile": "Dockerfile",
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	"extensions": [
+		"felixfbecker.php-debug",
+		"felixfbecker.php-intellisense"
+	],
+	"remoteUser": "vscode"
+}
