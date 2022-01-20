@@ -54,7 +54,8 @@ $insert->bindValue(':page_url', $page_url, PDO::PARAM_STR);
 $insert->bindValue(':currentTime', $currentTime, PDO::PARAM_INT);
 $insert->execute();
 
-$count = $db->query('SELECT COUNT() AS visitors, COUNT(DISTINCT page_url) AS pages FROM online')->fetch(PDO::FETCH_ASSOC);
+/* for some strange reason sometimes last_activity and id are NULL, this is fix */
+$count = $db->query('SELECT COUNT() AS visitors, COUNT(DISTINCT page_url) AS pages FROM online WHERE last_activity IS NOT NULL AND id IS NOT NULL')->fetch(PDO::FETCH_ASSOC);
 
 if ($count['visitors'] <= 1)
 {
