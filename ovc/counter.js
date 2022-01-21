@@ -86,30 +86,39 @@ function createOnlineVisitorsCounterElement() {
 
 /** Creates an iframe to show where are other visitors. */
 function createOnlineVisitorsIframe() {
-  var existingIframe = document.getElementById("online-visitors-iframe");
+  var existingList = document.getElementById("online-visitors-list");
 
-  if (existingIframe !== null) {
-    document.body.removeChild(existingIframe);
+  if (existingList !== null) {
+    document.body.removeChild(existingList);
     return;
   }
+
+  var onlineVisitorsList = document.createElement("div");
+  onlineVisitorsList.id = "online-visitors-list";
+  onlineVisitorsList.style.cssText =
+    "top: 50%; left: 50%; width:50%; height:18em; margin-top: -9em; margin-left: -25%; -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px; border:3px solid #8dc0e3; position:fixed; z-index:124;";
+
+  var xmlhttp = window.XMLHttpRequest
+    ? new XMLHttpRequest()
+    : new ActiveXObject("Microsoft.XMLHTTP");
+  xmlhttp.onreadystatechange = function () {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+      onlineVisitorsList.innerHTML = xmlhttp.responseText;
+      document.body.appendChild(onlineVisitorsList);
+    }
+  };
+  xmlhttp.open("GET", onlineVisitorsCounterScriptPath() + "/list.php", true);
+  xmlhttp.send();
 
   var closingDiv = document.createElement("div");
   closingDiv.style.cssText =
     "background: white; opacity: .5; position:fixed; top:0px; bottom:0px; left:0px; right:0px; z-index:123;";
   closingDiv.onclick = function () {
-    document.body.removeChild(iframe);
+    document.body.removeChild(onlineVisitorsList);
     document.body.removeChild(closingDiv);
   };
 
   document.body.appendChild(closingDiv);
-
-  var iframe = document.createElement("iframe");
-  iframe.id = "online-visitors-iframe";
-  iframe.src = onlineVisitorsCounterScriptPath();
-  iframe.style.cssText =
-    "top: 50%; left: 50%; width:50%; height:18em; margin-top: -9em; margin-left: -25%; -moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px; border:3px solid #8dc0e3; position:fixed; z-index:124;";
-
-  document.body.appendChild(iframe);
 }
 
 // Initializes the conter as soon as the page finishes loading.

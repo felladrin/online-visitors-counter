@@ -1,33 +1,6 @@
-<?php require_once 'config.php'; ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title><?php echo $visitorsPageTitle; ?></title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <style type="text/css">
-        body {
-            background-color: white;
-            text-align: center;
-            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-            font-weight: 300;
-            font-size: 15px;
-            color: #8dc0e3;
-        }
-
-        a {
-            text-decoration: none;
-            color: #8dc066;
-            padding-left: 5px;
-        }
-
-        b {
-            font-size: 30px;
-            color: #8db0e3;
-        }
-    </style>
-</head>
-<body>
 <?php
+require_once 'config.php';
+
 echo "<h3>$visitorsPageTitle</h3>";
 
 try
@@ -66,5 +39,3 @@ if ($result)
     }
 }
 ?>
-</body>
-</html>
