@@ -67,7 +67,7 @@ function createOnlineVisitorsCounterElement() {
     button.title = "Click to see where is everybody!";
     button.href = "#";
     button.onclick = function () {
-      createOnlineVisitorsIframe();
+      createOnlineVisitorsListDiv();
       return false;
     };
     button.style.cssText =
@@ -78,14 +78,14 @@ function createOnlineVisitorsCounterElement() {
     existingElement.title = "Click to see where is everybody!";
     existingElement.href = "#";
     existingElement.onclick = function () {
-      createOnlineVisitorsIframe();
+      createOnlineVisitorsListDiv();
       return false;
     };
   }
 }
 
-/** Creates an iframe to show where are other visitors. */
-function createOnlineVisitorsIframe() {
+/** Creates a div to show where are other visitors. */
+function createOnlineVisitorsListDiv() {
   var existingList = document.getElementById("online-visitors-list");
 
   if (existingList !== null) {
