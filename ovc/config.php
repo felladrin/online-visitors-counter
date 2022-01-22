@@ -14,7 +14,7 @@ $pageSingular = "Page";
 // Plural word to represent the page which visitor is.
 $pagePlural = "Pages";
 
-// Format of the text from conter link.
+// Format of the text from counter link.
 // %1$d represents de quantity of visitors.
 // %2$s represents the "visitor" word, on plural form if there's more than one.
 // %3$d represents de quantity of distinct pages they are visiting.

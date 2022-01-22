@@ -121,7 +121,7 @@ function createOnlineVisitorsListDiv() {
   document.body.appendChild(closingDiv);
 }
 
-// Initializes the conter as soon as the page finishes loading.
+// Initializes the counter as soon as the page finishes loading.
 initialize(function () {
   createOnlineVisitorsCounterElement();
   updateOnlineVisitorsCounter();
