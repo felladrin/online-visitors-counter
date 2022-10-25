@@ -4,6 +4,13 @@ require_once 'config.php';
 session_start();
 
 $_SESSION['id'] = (isset($_SESSION['id'])) ? $_SESSION['id'] : uniqid();
+$secondsToConsiderOffline = (isset($secondsToConsiderOffline)) ? $secondsToConsiderOffline : 60;
+$visitorSingular = (isset($visitorSingular)) ? $visitorSingular : "Visitor";
+$visitorPlural = (isset($visitorPlural)) ? $visitorPlural : "Visitors";
+$pageSingular = (isset($pageSingular)) ? $pageSingular : "Page";
+$pagePlural = (isset($pagePlural)) ? $pagePlural : "Pages";
+$linkFormat = (isset($linkFormat)) ? $linkFormat : '%1$d %2$s in %3$d %4$s';
+$databaseFile = (isset($databaseFile)) ? $databaseFile : 'counter.sqlite';
 
 try
 {
@@ -46,7 +53,6 @@ $insert->bindValue(':page_url', $page_url, PDO::PARAM_STR);
 $insert->bindValue(':currentTime', $currentTime, PDO::PARAM_INT);
 $insert->execute();
 
-/* for some strange reason sometimes last_activity and id are NULL, this is fix */
 $count = $db->query('SELECT COUNT() AS visitors, COUNT(DISTINCT page_url) AS pages FROM online WHERE last_activity IS NOT NULL AND id IS NOT NULL')->fetch(PDO::FETCH_ASSOC);
 
 if ($count['visitors'] <= 1)
