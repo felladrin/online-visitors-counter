@@ -1,7 +1,0 @@
-tasks:
-  - name: PHP Server
-    command: php -S localhost:3000
-
-ports:
-  - port: 3000
-    onOpen: open-preview
